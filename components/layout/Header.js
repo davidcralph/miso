@@ -15,7 +15,7 @@ export function Header() {
             <Icon size="lg">
               <Icons.Logo />
             </Icon>
-            <Text>umami</Text>
+            <Text>miso</Text>
           </Link>
         </Column>
         <Column className={styles.buttons}>

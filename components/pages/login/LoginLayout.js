@@ -8,7 +8,7 @@ export function LoginLayout({ children }) {
   return (
     <div className={styles.layout} dir={dir}>
       <Head>
-        <title>{`Login | umami`}</title>
+        <title>{`Login | miso`}</title>
       </Head>
       {children}
     </div>

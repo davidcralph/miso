@@ -23,7 +23,7 @@ export function AppLayout({ title, children }) {
     <div className={styles.layout} data-app-version={CURRENT_VERSION}>
       {allowUpdate && <UpdateNotice />}
       <Head>
-        <title>{title ? `${title} | umami` : 'umami'}</title>
+        <title>{title ? `${title} | miso` : 'umami'}</title>
       </Head>
       <nav className={styles.nav}>
         <NavBar />

@@ -1,7 +1,7 @@
 import { useState, useMemo } from 'react';
 import { useRouter } from 'next/router';
 import { ComposableMap, Geographies, Geography, ZoomableGroup } from 'react-simple-maps';
-import classNames from 'classnames';
+import cx from 'classix';
 import { colord } from 'colord';
 import HoverTooltip from 'components/common/HoverTooltip';
 import { ISO_COUNTRIES, THEME_COLORS, MAP_FILE } from 'lib/constants';
@@ -53,11 +53,7 @@ export function WorldMap({ data, className }) {
   }
 
   return (
-    <div
-      className={classNames(styles.container, className)}
-      data-tip=""
-      data-for="world-map-tooltip"
-    >
+    <div className={cx(styles.container, className)} data-tip="" data-for="world-map-tooltip">
       <ComposableMap projection="geoMercator">
         <ZoomableGroup zoom={0.8} minZoom={0.7} center={[0, 40]}>
           <Geographies geography={`${basePath}${MAP_FILE}`}>

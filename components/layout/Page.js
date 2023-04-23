@@ -1,4 +1,4 @@
-import classNames from 'classnames';
+import cx from 'classix';
 import { Banner, Loading } from 'react-basics';
 import useMessages from 'hooks/useMessages';
 import styles from './Page.module.css';
@@ -14,7 +14,7 @@ export function Page({ className, error, loading, children }) {
     return <Loading icon="spinner" size="xl" position="page" />;
   }
 
-  return <div className={classNames(styles.page, className)}>{children}</div>;
+  return <div className={cx(styles.page, className)}>{children}</div>;
 }
 
 export default Page;

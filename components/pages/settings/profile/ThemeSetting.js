@@ -1,4 +1,4 @@
-import classNames from 'classnames';
+import cx from 'classix';
 import { Button, Icon } from 'react-basics';
 import useTheme from 'hooks/useTheme';
 import Sun from 'assets/sun.svg';
@@ -11,7 +11,7 @@ export function ThemeSetting() {
   return (
     <div className={styles.buttons}>
       <Button
-        className={classNames({ [styles.active]: theme === 'light' })}
+        className={cx({ [styles.active]: theme === 'light' })}
         onClick={() => setTheme('light')}
       >
         <Icon>
@@ -19,7 +19,7 @@ export function ThemeSetting() {
         </Icon>
       </Button>
       <Button
-        className={classNames({ [styles.active]: theme === 'dark' })}
+        className={cx({ [styles.active]: theme === 'dark' })}
         onClick={() => setTheme('dark')}
       >
         <Icon>

@@ -1,5 +1,5 @@
 import { Icon, Button, PopupTrigger, Popup, Text } from 'react-basics';
-import classNames from 'classnames';
+import cx from 'classix';
 import { languages } from 'lib/lang';
 import useLocale from 'hooks/useLocale';
 import Icons from 'components/icons';
@@ -26,7 +26,7 @@ export function LanguageButton() {
             return (
               <div
                 key={value}
-                className={classNames(styles.item, { [styles.selected]: value === locale })}
+                className={cx(styles.item, { [styles.selected]: value === locale })}
                 onClick={handleSelect.bind(null, value)}
               >
                 <Text>{label}</Text>

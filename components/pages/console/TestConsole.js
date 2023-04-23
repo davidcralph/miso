@@ -55,7 +55,7 @@ export function TestConsole() {
   return (
     <Page loading={isLoading} error={error}>
       <Head>
-        <title>{website ? `${website.name} | Umami Console` : 'Umami Console'}</title>
+        <title>{website ? `${website.name} | miso console` : 'miso console'}</title>
       </Head>
       <PageHeader title="Test console">
         <WebsiteSelect websiteId={website?.id} onSelect={handleChange} />

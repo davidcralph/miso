@@ -1,6 +1,6 @@
 import { useState, useMemo } from 'react';
 import { DragDropContext, Draggable, Droppable } from 'react-beautiful-dnd';
-import classNames from 'classnames';
+import cx from 'classix';
 import { Button } from 'react-basics';
 import { firstBy } from 'thenby';
 import useDashboard, { saveDashboard } from 'store/dashboard';
@@ -75,7 +75,7 @@ export function DashboardEdit({ websites }) {
                     {(provided, snapshot) => (
                       <div
                         ref={provided.innerRef}
-                        className={classNames(styles.item, {
+                        className={cx(styles.item, {
                           [styles.active]: snapshot.isDragging,
                         })}
                         {...provided.draggableProps}

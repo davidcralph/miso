@@ -1,5 +1,5 @@
 import { Icon, Icons } from 'react-basics';
-import classNames from 'classnames';
+import cx from 'classix';
 import Link from 'next/link';
 import { safeDecodeURI } from 'next-basics';
 import usePageQuery from 'hooks/usePageQuery';
@@ -18,7 +18,7 @@ export function FilterLink({ id, value, label, externalUrl }) {
       {value && (
         <Link
           href={resolveUrl({ [id]: value })}
-          className={classNames(styles.label, {
+          className={cx(styles.label, {
             [styles.inactive]: active && !selected,
             [styles.active]: active && selected,
           })}

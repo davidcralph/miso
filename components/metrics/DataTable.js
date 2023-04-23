@@ -2,7 +2,7 @@ import { useState } from 'react';
 import useMeasure from 'react-use-measure';
 import { FixedSizeList } from 'react-window';
 import { useSpring, animated, config } from 'react-spring';
-import classNames from 'classnames';
+import cx from 'classix';
 import NoData from 'components/common/NoData';
 import { formatNumber, formatLongNumber } from 'lib/format';
 import styles from './DataTable.module.css';
@@ -47,7 +47,7 @@ export function DataTable({
   };
 
   return (
-    <div className={classNames(styles.table, className)}>
+    <div className={cx(styles.table, className)}>
       <div className={styles.header}>
         <div className={styles.title}>{title}</div>
         <div className={styles.metric} onClick={handleSetFormat}>

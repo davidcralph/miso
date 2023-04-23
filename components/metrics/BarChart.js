@@ -1,6 +1,6 @@
 import { useState, useRef, useEffect, useMemo, useCallback } from 'react';
 import { StatusLight, Loading } from 'react-basics';
-import classNames from 'classnames';
+import cx from 'classix';
 import Chart from 'chart.js/auto';
 import HoverTooltip from 'components/common/HoverTooltip';
 import Legend from 'components/metrics/Legend';
@@ -201,7 +201,7 @@ export function BarChart({
 
   return (
     <>
-      <div className={classNames(styles.chart, className)}>
+      <div className={cx(styles.chart, className)}>
         {loading && <Loading position="page" icon="dots" />}
         <canvas ref={canvas} />
       </div>

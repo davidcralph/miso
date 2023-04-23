@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import { StatusLight } from 'react-basics';
 import { colord } from 'colord';
-import classNames from 'classnames';
+import cx from 'classix';
 import useLocale from 'hooks/useLocale';
 import useForceUpdate from 'hooks/useForceUpdate';
 import styles from './Legend.module.css';
@@ -36,7 +36,7 @@ export function Legend({ chart }) {
         return (
           <div
             key={text}
-            className={classNames(styles.label, { [styles.hidden]: hidden })}
+            className={cx(styles.label, { [styles.hidden]: hidden })}
             onClick={() => handleClick(datasetIndex)}
           >
             <StatusLight color={color.alpha(color.alpha() + 0.2).toHex()}>

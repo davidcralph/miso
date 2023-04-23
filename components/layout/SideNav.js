@@ -1,4 +1,4 @@
-import classNames from 'classnames';
+import cx from 'classix';
 import { Menu, Item } from 'react-basics';
 import { useRouter } from 'next/router';
 import Link from 'next/link';
@@ -9,10 +9,7 @@ export function SideNav({ selectedKey, items, shallow, onSelect = () => {} }) {
   return (
     <Menu items={items} selectedKey={selectedKey} className={styles.menu} onSelect={onSelect}>
       {({ key, label, url }) => (
-        <Item
-          key={key}
-          className={classNames(styles.item, { [styles.selected]: asPath.startsWith(url) })}
-        >
+        <Item key={key} className={cx(styles.item, { [styles.selected]: asPath.startsWith(url) })}>
           <Link href={url} shallow={shallow}>
             {label}
           </Link>

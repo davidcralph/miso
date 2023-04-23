@@ -1,6 +1,6 @@
 import { Icon, Text, Row, Column } from 'react-basics';
 import Link from 'next/link';
-import classNames from 'classnames';
+import cx from 'classix';
 import Icons from 'components/icons';
 import ThemeButton from 'components/input/ThemeButton';
 import LanguageButton from 'components/input/LanguageButton';
@@ -23,14 +23,14 @@ export function NavBar() {
   ].filter(n => n);
 
   return (
-    <div className={classNames(styles.navbar)}>
+    <div className={cx(styles.navbar)}>
       <Row>
         <Column className={styles.left}>
           <div className={styles.logo}>
             <Icon size="lg">
               <Icons.Logo />
             </Icon>
-            <Text className={styles.text}>umami</Text>
+            <Text className={styles.text}>miso</Text>
           </div>
           <div className={styles.links}>
             {links.map(({ url, label }) => {
@@ -38,7 +38,7 @@ export function NavBar() {
                 <Link
                   key={url}
                   href={url}
-                  className={classNames({ [styles.selected]: pathname.startsWith(url) })}
+                  className={cx({ [styles.selected]: pathname.startsWith(url) })}
                 >
                   <Text>{label}</Text>
                 </Link>

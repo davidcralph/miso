@@ -1,7 +1,7 @@
 import { useMemo } from 'react';
 import { Button, Icon, Text, Row, Column } from 'react-basics';
 import Link from 'next/link';
-import classNames from 'classnames';
+import cx from 'classix';
 import PageviewsChart from './PageviewsChart';
 import MetricsBar from './MetricsBar';
 import WebsiteHeader from './WebsiteHeader';
@@ -96,7 +96,7 @@ export function WebsiteChart({
       />
       <Row
         ref={ref}
-        className={classNames(styles.header, {
+        className={cx(styles.header, {
           [styles.sticky]: stickyHeader,
           [styles.isSticky]: isSticky,
         })}

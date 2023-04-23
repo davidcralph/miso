@@ -2,7 +2,7 @@ import { useMemo } from 'react';
 import { Loading, Icon, Text, Button } from 'react-basics';
 import Link from 'next/link';
 import firstBy from 'thenby';
-import classNames from 'classnames';
+import cx from 'classix';
 import useApi from 'hooks/useApi';
 import { percentFilter } from 'lib/filters';
 import useDateRange from 'hooks/useDateRange';
@@ -73,7 +73,7 @@ export function MetricsTable({
   const { dir } = useLocale();
 
   return (
-    <div className={classNames(styles.container, className)}>
+    <div className={cx(styles.container, className)}>
       {!data && isLoading && !isFetched && <Loading icon="dots" />}
       {error && <ErrorMessage />}
       {data && !error && <DataTable {...props} data={filteredData} className={className} />}

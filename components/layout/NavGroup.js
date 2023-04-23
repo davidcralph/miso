@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Icon, Text, Tooltip } from 'react-basics';
-import classNames from 'classnames';
+import cx from 'classix';
 import { useRouter } from 'next/router';
 import Link from 'next/link';
 import Icons from 'components/icons';
@@ -20,7 +20,7 @@ export function NavGroup({
 
   return (
     <div
-      className={classNames(styles.group, {
+      className={cx(styles.group, {
         [styles.expanded]: expanded,
         [styles.minimized]: minimized,
       })}
@@ -39,7 +39,7 @@ export function NavGroup({
             <Tooltip key={label} label={label} position="right" disabled={!minimized}>
               <Link
                 href={url}
-                className={classNames(styles.item, {
+                className={cx(styles.item, {
                   [styles.divider]: divider,
                   [styles.selected]: pathname.startsWith(url),
                 })}
