@@ -13,7 +13,7 @@ export function FilterLink({ id, value, label, externalUrl, children, className 
   const selected = query[id] === value;
 
   return (
-    <div className={classNames(styles.row, className)}>
+    <div className={cx(styles.row, className)}>
       {children}
       {!value && `(${label || formatMessage(labels.unknown)})`}
       {value && (
